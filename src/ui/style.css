@@ -171,3 +171,6 @@ details.domain code { font-size: 0.8125rem; }
     position: sticky; left: 0; z-index: 1; background: var(--surface); box-shadow: 1px 0 0 var(--rule);
   }
 }
+.about { margin-top: 24px; max-width: 46rem; }
+.about h2 { font-size: 1rem; margin: 0 0 4px; color: var(--fg); }
+.about p { margin: 0 0 8px; }

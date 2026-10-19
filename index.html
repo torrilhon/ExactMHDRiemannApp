@@ -3,9 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exact MHD Riemann Solver</title>
+    <title>Exact Riemann Solver for Ideal MHD – online | ExactMHDRiemannApp</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <meta name="description" content="Exact solutions of Riemann problems of ideal magnetohydrodynamics, computed in the browser." />
+    <meta name="description" content="Exact solutions of Riemann problems of ideal magnetohydrodynamics (MHD) in the browser: shocks, rarefaction fans, rotations, wave table, plots and CSV, for benchmarking numerical schemes." />
+    <meta name="author" content="Manuel Torrilhon" />
+    <link rel="canonical" href="https://torrilhon.github.io/ExactMHDRiemannApp/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Exact Riemann Solver for Ideal MHD" />
+    <meta property="og:description" content="Exact solutions of Riemann problems of ideal magnetohydrodynamics (MHD) in the browser: shocks, rarefaction fans, rotations, wave table, plots and CSV, for benchmarking numerical schemes." />
+    <meta property="og:url" content="https://torrilhon.github.io/ExactMHDRiemannApp/" />
+    <meta property="og:image" content="https://torrilhon.github.io/ExactMHDRiemannApp/preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ExactMHDRiemannApp",
+        "alternateName": "Exact MHD Riemann Solver",
+        "url": "https://torrilhon.github.io/ExactMHDRiemannApp/",
+        "description": "Exact solutions of Riemann problems of ideal magnetohydrodynamics (MHD) in the browser: shocks, rarefaction fans, rotations, wave table, plots and CSV, for benchmarking numerical schemes.",
+        "applicationCategory": "Scientific software",
+        "operatingSystem": "Any (web browser)",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "license": "https://opensource.org/licenses/MIT",
+        "isAccessibleForFree": true,
+        "author": { "@type": "Person", "name": "Manuel Torrilhon", "affiliation": { "@type": "Organization", "name": "ACoM, RWTH Aachen University" } },
+        "codeRepository": "https://github.com/torrilhon/ExactMHDRiemannApp",
+        "isBasedOn": "https://github.com/torrilhon/ExactMHDRiemannSolver",
+        "keywords": "ideal magnetohydrodynamics, MHD, Riemann problem, exact Riemann solver, shock tube, Brio-Wu, plasma physics, benchmark",
+        "citation": [
+          { "@type": "Report", "name": "Exact Solver and Uniqueness Conditions for Riemann Problems of Ideal Magnetohydrodynamics", "author": "Manuel Torrilhon", "datePublished": "2002", "publisher": "Seminar for Applied Mathematics, ETH Zürich", "url": "https://www.sam.math.ethz.ch/sam_reports/reports_final/reports2002/2002-06.pdf" },
+          { "@type": "ScholarlyArticle", "name": "Uniqueness conditions for Riemann problems of ideal magnetohydrodynamics", "author": "Manuel Torrilhon", "datePublished": "2003", "isPartOf": "Journal of Plasma Physics 69(3), 253–276", "sameAs": "https://doi.org/10.1017/S0022377803002186" }
+        ]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -104,6 +137,26 @@
         <div id="plots" class="plots"></div>
       </section>
 
+      <section class="about muted">
+        <h2>About</h2>
+        <p>
+          This page computes the exact solution of the Riemann problem of one-dimensional ideal
+          magnetohydrodynamics (MHD) for a γ-law gas: two constant states separated at x = 0, which
+          evolve into fast and slow shocks or rarefaction fans, rotational (Alfvén) discontinuities and
+          a contact. Typical use is the verification of numerical MHD schemes against shock-tube problems
+          such as Brio–Wu. Every solution passes independent checks (Rankine–Hugoniot, Lax and entropy
+          conditions) before it is shown; the computation runs entirely in your browser.
+        </p>
+        <p>
+          Method: M. Torrilhon, <a href="https://www.sam.math.ethz.ch/sam_reports/reports_final/reports2002/2002-06.pdf">Exact
+          Solver and Uniqueness Conditions for Riemann Problems of Ideal Magnetohydrodynamics</a>, SAM Research
+          Report 2002-06, ETH Zürich, 2002; see also M. Torrilhon, <em>Uniqueness conditions for Riemann problems
+          of ideal magnetohydrodynamics</em>, J. Plasma Phys. 69(3), 253–276 (2003),
+          <a href="https://doi.org/10.1017/S0022377803002186">doi:10.1017/S0022377803002186</a>.
+          Source code: <a href="https://github.com/torrilhon/ExactMHDRiemannApp">ExactMHDRiemannApp</a> (this page,
+          TypeScript) and the Julia package <a href="https://github.com/torrilhon/ExactMHDRiemannSolver">ExactMHDRiemannSolver.jl</a>.
+        </p>
+      </section>
       <footer class="muted"><span id="snapshot">TypeScript port of ExactMHDRiemannSolver.jl</span></footer>
     </main>
     <script type="module" src="./src/main.ts"></script>
